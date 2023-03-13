@@ -1,3 +1,4 @@
+//FRONT-END ELEMENTS
 const blockContainer = document.getElementById("blockContainer");
 const blockElement = document.querySelectorAll(".block");
 const wandOfLightButton = document.querySelector(".wand-of-light");
@@ -5,12 +6,11 @@ const wandTitle = document.querySelector(".wand-title");
 const greeting = document.querySelector(".greeting");
 const leftFireworks = document.querySelector(".container1");
 const rightFireworks = document.querySelector(".container3");
-
 const width =
   window.innerWidth ||
   document.documentElement.clientWidth ||
   document.body.clientWidth;
-
+//ALL COLORS USED FOR FONTS
 const gradientColors = [
   "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
   "linear-gradient(to right, #ffecd2 0%, #fcb69f 100%)",
@@ -39,7 +39,7 @@ const plainColors = [
   "#DDA0DD",
   "#FF6347",
 ];
-
+//STYLES LANDING PAGE H1
 const greetingText = "Happy Birthday My Love";
 greetingText.split("").forEach((character) => {
   const characterSpan = document.createElement("span");
@@ -58,7 +58,7 @@ greetLetter.forEach((letter) => {
     letter.style.color = plainColors[randomNumberLetter];
   }
 });
-
+//STYLES "BIRTHDAY CARD" BUTTON
 const randomNumber = Math.floor(Math.random() * plainColors.length);
 const randomNumberPlain = Math.floor(Math.random() * plainColors.length);
 const randomNumberborder = Math.floor(Math.random() * plainColors.length);
@@ -79,7 +79,7 @@ wandOfLightButton.addEventListener("mouseleave", () => {
   wandOfLightButton.style.backgroundImage = "";
   wandOfLightButton.style.borderColor = "";
 });
-
+//BIRTHDAY CARD CONTENT AND STYLING
 const bdayCard = () => {
   const speech =
     "My love, I am so proud of you and the person you've become. You have unconditionally supported me from day one and showed me a love I didnt know existed. I'll always be there for you the same way you've always been there for me. I love you. -Trent";
@@ -104,7 +104,7 @@ const bdayCard = () => {
     }
   });
 };
-
+//HANDLES ALL ANIMATION THAT HAPPENS AFTER PRESSING "BDAY CARD BUTTON"
 const makeAnimation = () => {
   const greetingKeyFrames = new KeyframeEffect(
     greeting,
@@ -129,6 +129,7 @@ const mobileFireworks = new KeyframeEffect(
 );
 const mobileFireworksAnimation = new Animation(mobileFireworks);
 
+//OPENS BDAY CARD AND DISPLAYS CONTENT
 const WOLSwitch = () => {
   makeAnimation();
   if (width < 780) {
@@ -146,7 +147,7 @@ const WOLSwitch = () => {
 
   bdayCard();
 };
-
+//LIGHTING EFFECT THAT HAPPENS WHEN YOU CLICK ON "BDAY CARD" BUTTON
 const bomb = () => {
   if (width > 780) {
     wandOfLightButton.addEventListener("mousedown", () => {
@@ -180,9 +181,8 @@ const bomb = () => {
     });
   }
 };
-
 bomb();
-
+//ADDS AUDIO OF ACTUAL FIREWORKS IF YOU CLICK ON FIREWORK IMAGES
 leftFireworks.addEventListener("click", () => {
   const audioFile = document.getElementById("audio-file");
   setTimeout(() => {
