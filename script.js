@@ -13,7 +13,7 @@ const width =
 //ALL COLORS USED FOR FONTS
 const gradientColors = [
   "linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
-  "linear-gradient(to right, #ffecd2 0%, #fcb69f 100%)",
+  // "linear-gradient(to right, #ffecd2 0%, #fcb69f 100%)",
   "linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%)",
   "linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)",
   "linear-gradient(to right, #4facfe 0%, #00f2fe 100%)",
@@ -138,9 +138,6 @@ const WOLSwitch = () => {
     wandTitle.style.display = "block";
     blockContainer.style.width = "100%";
     blockContainer.style.height = "75%";
-    blockElement.forEach((block) => {
-      block.style.display = "block";
-    })
   }
   wandOfLightButton.disabled = "true";
   wandTitle.innerHTML = "";
@@ -150,41 +147,6 @@ const WOLSwitch = () => {
 
   bdayCard();
 };
-//LIGHTING EFFECT THAT HAPPENS WHEN YOU CLICK ON "BDAY CARD" BUTTON
-const bomb = () => {
-  if (width > 780) {
-    wandOfLightButton.addEventListener("mousedown", () => {
-      blockElement.forEach((block) => {
-        block.style.transition = "opacity ease-in";
-        block.style.opacity = ".9";
-        const randomNumber = Math.floor(Math.random() * gradientColors.length);
-        block.style.backgroundImage = gradientColors[randomNumber];
-      });
-    });
-    wandOfLightButton.addEventListener("mouseup", () => {
-      blockElement.forEach((block) => {
-        block.style.transition = "opacity 2000ms ease-out";
-        block.style.opacity = "0";
-      });
-    });
-  } else {
-    wandOfLightButton.addEventListener("click", () => {
-      blockElement.forEach((block) => {
-        block.style.transition = "opacity ease-in";
-        block.style.opacity = ".8";
-        const randomNumber = Math.floor(Math.random() * gradientColors.length);
-        block.style.backgroundImage = gradientColors[randomNumber];
-      });
-    });
-    wandOfLightButton.addEventListener("click", () => {
-      blockElement.forEach((block) => {
-        block.style.transition = "opacity 1500ms ease-out";
-        block.style.opacity = "0";
-      });
-    });
-  }
-};
-bomb();
 //ADDS AUDIO OF ACTUAL FIREWORKS IF YOU CLICK ON FIREWORK IMAGES
 leftFireworks.addEventListener("click", () => {
   const audioFile = document.getElementById("audio-file");
