@@ -138,6 +138,9 @@ const WOLSwitch = () => {
     wandTitle.style.display = "block";
     blockContainer.style.width = "100%";
     blockContainer.style.height = "75%";
+    blockElement.forEach((block) => {
+      block.style.display = "block";
+    })
   }
   wandOfLightButton.disabled = "true";
   wandTitle.innerHTML = "";
