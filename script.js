@@ -1,6 +1,5 @@
 //FRONT-END ELEMENTS
-const blockContainer = document.getElementById("blockContainer");
-const blockElement = document.querySelectorAll(".block");
+const container2 = document.getElementById("container2");
 const wandOfLightButton = document.querySelector(".wand-of-light");
 const wandTitle = document.querySelector(".wand-title");
 const greeting = document.querySelector(".greeting");
@@ -48,7 +47,7 @@ greetingText.split("").forEach((character) => {
 });
 const greetLetter = document.querySelectorAll(".greeting span");
 greetLetter.forEach((letter) => {
-  if (width > 780) {
+  if (width > 980) {
     letter.addEventListener("mouseenter", () => {
       const randomNumberLetter = Math.floor(Math.random() * plainColors.length);
       letter.style.color = plainColors[randomNumberLetter];
@@ -91,7 +90,7 @@ const bdayCard = () => {
   const characters = document.querySelectorAll(".wand-title span");
 
   characters.forEach((letter) => {
-    if (width > 780) {
+    if (width > 1400) {
       letter.addEventListener("mouseenter", () => {
         const randomNumberLetter = Math.floor(
           Math.random() * plainColors.length
@@ -123,7 +122,7 @@ const makeAnimation = () => {
   WOLanimation.play();
 };
 const mobileFireworks = new KeyframeEffect(
-  blockContainer,
+  container2,
   { opacity: ".5" },
   { duration: 300, fill: "forwards" }
 );
@@ -132,16 +131,30 @@ const mobileFireworksAnimation = new Animation(mobileFireworks);
 //OPENS BDAY CARD AND DISPLAYS CONTENT
 const WOLSwitch = () => {
   makeAnimation();
-  if (width < 780) {
+  if (width < 480) {
     mobileFireworksAnimation.play();
-    blockContainer.style.display = "flex";
+    container2.style.display = "flex";
     wandTitle.style.display = "block";
-    blockContainer.style.width = "100%";
-    blockContainer.style.height = "75%";
+    container2.style.width = "100%";
+    container2.style.height = "75%";
+  }
+  if (width > 480 && width < 880) {
+    mobileFireworksAnimation.play();
+    container2.style.display = "flex";
+    wandTitle.style.display = "block";
+    container2.style.width = "50%";
+    container2.style.height = "75%";
+  }
+  if (width > 880 && width < 1024) {
+    mobileFireworksAnimation.play();
+    container2.style.display = "flex";
+    wandTitle.style.display = "block";
+    container2.style.width = "100%";
+    container2.style.height = "75%";
   }
   wandOfLightButton.disabled = "true";
   wandTitle.innerHTML = "";
-  wandTitle.style.transition = "opacity 2000ms ease-in-out";
+  wandTitle.style.transition = "opacity 2500ms ease-in-out";
   wandTitle.style.opacity = "1";
   wandTitle.style.color = "transparent";
 
@@ -160,8 +173,8 @@ rightFireworks.addEventListener("click", () => {
     audioFile.play();
   }, 100);
 });
-if (width < 780) {
-  blockContainer.addEventListener("click", () => {
+if (width < 980) {
+  container2.addEventListener("click", () => {
     const audioFile = document.getElementById("audio-file");
     setTimeout(() => {
       audioFile.play();

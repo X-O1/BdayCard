@@ -33,7 +33,7 @@ body {
     background-repeat: no-repeat;
     background-size: 520px;
     background-position: top;
-    animation: firework-load 2000ms;
+    animation: firework-load 2000ms ease-out;
     animation-fill-mode: forwards;
     display: flex;
     justify-content: left;
@@ -43,6 +43,16 @@ body {
 
 .container1 {
     background-image: url(/images/fireworks10left.jpeg);
+}
+
+.container2 {
+    width: 50%;
+    height: 100%;
+    background-color: #0F0F1A;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    position: relative;
 }
 
 .mode-buttons {
@@ -66,7 +76,7 @@ body {
     background: none;
     cursor: pointer;
     opacity: 0;
-    animation: WOL-button-load 3000ms 2600ms;
+    animation: WOL-button-load 3000ms 3000ms;
     animation-fill-mode: forwards;
 }
 
@@ -81,28 +91,12 @@ body {
     height: 150px;
     padding-top: 15px;
     max-width: 800px;
-}
+    text-align: center;
 
-.block-container {
-    width: 50%;
-    height: 100%;
-    background-color: #0F0F1A;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px auto;
-    position: relative;
 }
 
 
-.block {
-    width: 30px;
-    height: 30px;
-    border-radius: 100px 100px 100px 0px;
-    opacity: 1;
-    margin: auto;
-    z-index: 9998;
-    background-size: cover;
-}
+
 
 /** KEYFRAMES **/
 @keyframes greeting-load {
@@ -141,19 +135,6 @@ body {
     }
 }
 
-@keyframes greeting-load-mobile {
-    0% {
-        opacity: 0;
-        font-size: 55px;
-    }
-
-    100% {
-        opacity: 1;
-        font-size: 55px;
-
-    }
-}
-
 @keyframes block-container-load {
     0% {
         opacity: 0;
@@ -166,7 +147,96 @@ body {
 }
 
 /** MEDIA **/
-@media screen and (max-width: 780px) {
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) and (max-height : 400px) and (orientation : landscape) {
+
+    .wand-title,
+    .block {
+        display: none;
+    }
+
+    .greeting {
+        top: 13%;
+        opacity: 0;
+        font-size: 0px;
+        animation: greeting-load-mobile 2000ms ease-out 1500ms;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes greeting-load-mobile {
+        0% {
+            opacity: 0;
+            font-size: 0px;
+        }
+
+        100% {
+            opacity: 1;
+            font-size: 47px;
+
+        }
+    }
+
+    .wand-of-light {
+        padding: 10px;
+        font-size: 25px;
+
+    }
+
+    .mode-buttons {
+        top: 45%;
+        z-index: 9999;
+        width: auto;
+
+    }
+
+    .container1,
+    .container3 {
+
+        background-size: 250px;
+        background-position: top;
+        animation: firework-load 2000ms;
+        animation-fill-mode: forwards;
+        display: flex;
+        justify-content: left;
+        align-items: left;
+        cursor: pointer;
+    }
+
+    .wand-title {
+        font-size: 30px;
+        height: 65vh;
+        padding: 40px 50px 50px;
+        margin: auto;
+        width: 400px;
+
+    }
+
+    .container2 {
+        height: 80%;
+        width: 300px;
+
+    }
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 480px) and (orientation : portrait) {
+    body {
+        background-color: #0F0F1A;
+        height: 98vh;
+    }
+
+    .container1,
+    .container3,
+    .wand-title,
+    .block {
+        display: none;
+    }
+
     .greeting {
         text-align: center;
         width: 350px;
@@ -177,6 +247,91 @@ body {
         animation-fill-mode: forwards;
     }
 
+    @keyframes greeting-load-mobile {
+        0% {
+            opacity: 0;
+            font-size: 55px;
+        }
+
+        100% {
+            opacity: 1;
+            font-size: 55px;
+
+        }
+    }
+
+    .mode-buttons {
+        top: 33%;
+        z-index: 9999;
+    }
+
+    .wand-of-light {
+        padding: 10px;
+        font-size: 28px;
+    }
+
+    .wand-title {
+        font-size: 40px;
+        height: 85vh;
+        padding: 40px;
+        padding-top: 50px;
+        margin: auto;
+    }
+
+    .container2 {
+        background-image: url(images/fireworks10.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        height: 65%;
+        width: 100vw;
+        margin: auto auto 0px;
+        animation: block-container-load 2000ms;
+        animation-fill-mode: forwards;
+        z-index: 9998;
+        opacity: 1;
+    }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    .greeting {
+        text-align: center;
+        width: 100%;
+        top: 10%;
+        opacity: 0;
+        font-size: 0px;
+        animation: greeting-load-mobile 2000ms ease-out 1600ms;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes greeting-load-mobile {
+        0% {
+            opacity: 0;
+            font-size: 0px;
+        }
+
+        100% {
+            opacity: 1;
+            font-size: 80px;
+
+        }
+    }
+
+    .wand-of-light {
+        padding: 12px;
+        font-size: 40px;
+
+    }
+
     .container1,
     .container3,
     .wand-title,
@@ -184,23 +339,20 @@ body {
         display: none;
     }
 
-    .mode-buttons {
-        width: auto;
-    }
-
     .wand-title {
-        font-size: 40px;
-        height: 85vh;
-        padding: 50px;
+        font-size: 80px;
+        height: 75vh;
+        padding: 100px;
         margin: auto;
+
     }
 
-    .block-container {
+    .container2 {
         background-image: url(images/fireworks10.jpeg);
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 80%;
         background-position: bottom;
-        height: 65%;
+        height: 80%;
         width: 100vw;
         margin: auto auto 0px;
         animation: block-container-load 2000ms;
@@ -215,8 +367,19 @@ body {
     }
 
     .mode-buttons {
-        top: 34%;
+        top: 26%;
         z-index: 9999;
-    }
+        width: auto;
 
+    }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+    /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    /* Styles */
 }
