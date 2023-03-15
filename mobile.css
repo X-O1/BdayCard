@@ -44,14 +44,13 @@
 
     .container1,
     .container3 {
-
         background-size: 250px;
         background-position: top;
         animation: firework-load 2000ms;
         animation-fill-mode: forwards;
         display: flex;
-        justify-content: left;
-        align-items: left;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
     }
 

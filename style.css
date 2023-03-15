@@ -6,11 +6,14 @@ body {
     text-align: center;
     padding: 0;
     margin: 0px;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: #0F0F1A;
     font-family: 'Dancing Script', cursive;
+
+
 }
+
 
 .greeting {
     position: absolute;
@@ -26,20 +29,20 @@ body {
 .container1,
 .container3 {
     width: 25%;
-    height: 100%;
+    height: 94vh;
     opacity: 1;
     transform: translateY(150%);
     background-image: url(/images/fireworks10.jpeg);
     background-repeat: no-repeat;
     background-size: 520px;
-    background-position: top;
+    background-position: center;
     animation: firework-load 2000ms ease-out;
     animation-fill-mode: forwards;
     display: flex;
     justify-content: left;
-    align-items: left;
     cursor: pointer;
 }
+
 
 .container1 {
     background-image: url(/images/fireworks10left.jpeg);
