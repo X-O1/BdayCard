@@ -1,7 +1,7 @@
 //FRONT-END ELEMENTS
 const container2 = document.getElementById("container2");
 const wandOfLightButton = document.querySelector(".wand-of-light");
-const wandTitle = document.querySelector(".wand-title");
+const cardContent = document.querySelector(".card-content");
 const greeting = document.querySelector(".greeting");
 const leftFireworks = document.querySelector(".container1");
 const rightFireworks = document.querySelector(".container3");
@@ -85,9 +85,9 @@ const bdayCard = () => {
   speech.split("").forEach((character) => {
     const characterSpan = document.createElement("span");
     characterSpan.innerText = character;
-    wandTitle.appendChild(characterSpan);
+    cardContent.appendChild(characterSpan);
   });
-  const characters = document.querySelectorAll(".wand-title span");
+  const characters = document.querySelectorAll(".card-content span");
 
   characters.forEach((letter) => {
     if (width > 1400) {
@@ -134,29 +134,29 @@ const WOLSwitch = () => {
   if (width < 480) {
     mobileFireworksAnimation.play();
     container2.style.display = "flex";
-    wandTitle.style.display = "block";
+    cardContent.style.display = "block";
     container2.style.width = "100%";
     container2.style.height = "75%";
   }
   if (width > 480 && width < 880) {
     mobileFireworksAnimation.play();
     container2.style.display = "flex";
-    wandTitle.style.display = "block";
+    cardContent.style.display = "block";
     container2.style.width = "50%";
     container2.style.height = "75%";
   }
   if (width > 880 && width < 1024) {
     mobileFireworksAnimation.play();
     container2.style.display = "flex";
-    wandTitle.style.display = "block";
+    cardContent.style.display = "block";
     container2.style.width = "100%";
     container2.style.height = "75%";
   }
   wandOfLightButton.disabled = "true";
-  wandTitle.innerHTML = "";
-  wandTitle.style.transition = "opacity 2500ms ease-in-out";
-  wandTitle.style.opacity = "1";
-  wandTitle.style.color = "transparent";
+  cardContent.innerHTML = "";
+  cardContent.style.transition = "opacity 2500ms ease-in-out";
+  cardContent.style.opacity = "1";
+  cardContent.style.color = "transparent";
 
   bdayCard();
 };

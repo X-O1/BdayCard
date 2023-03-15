@@ -1,0 +1,46 @@
+@keyframes greeting-load {
+    0% {
+        opacity: 0;
+        font-size: 0px;
+
+    }
+
+    100% {
+        opacity: 1;
+        font-size: 70px;
+
+    }
+}
+
+@keyframes WOL-button-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes firework-load {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@keyframes container2-load {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
