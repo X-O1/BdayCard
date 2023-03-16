@@ -69,13 +69,14 @@
 
     }
 
+
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 480px) and (orientation : portrait) {
     body {
         background-color: #0F0F1A;
-        height: 98vh;
+        height: 95vh;
     }
 
     .container1,
@@ -128,9 +129,9 @@
     .container2 {
         background-image: url(images/fireworks10.jpeg);
         background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: bottom;
-        height: 65%;
+        background-size: 85%;
+        background-position: center;
+        height: 75%;
         width: 100vw;
         margin: auto auto 0px;
         animation: container2-load 2000ms;
@@ -155,20 +156,18 @@
         width: 100%;
         top: 10%;
         opacity: 0;
-        font-size: 0px;
-        animation: greeting-load-mobile 2000ms ease-out 1600ms;
+        font-size: 80px;
+        animation: greeting-load-mobile 6500ms 1900ms;
         animation-fill-mode: forwards;
     }
 
     @keyframes greeting-load-mobile {
         0% {
             opacity: 0;
-            font-size: 0px;
         }
 
         100% {
             opacity: 1;
-            font-size: 80px;
 
         }
     }
