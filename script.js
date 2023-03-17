@@ -81,7 +81,7 @@ wandOfLightButton.addEventListener("mouseleave", () => {
 //BIRTHDAY CARD CONTENT AND STYLING
 const bdayCard = () => {
   const speech =
-    "My love, I am so proud of you and the person you've become. You have unconditionally supported me from day one and showed me a love I didnt know existed. I'll always be there for you the same way you've always been there for me. I love you. -Trent";
+    " My love, I am so proud to be your partner in life. Who you are and how you treat the people around you has always inspired me to be a version of myself that I could be proud of. The unconditional love and support you give is a rare thing to receive in life and I appreciate it with all my heart. You’ve grown into a beautiful, strong , intelligent women right in front of my eyes and I have the utmost confidence in you and all of your pursuits. I’ll always be there for you the way you’ve always been there for me. Happy Birthday my baby, I love you -Trent";
   speech.split("").forEach((character) => {
     const characterSpan = document.createElement("span");
     characterSpan.innerText = character;

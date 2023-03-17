@@ -11,10 +11,7 @@ body {
     background-color: #0F0F1A;
     font-family: 'Dancing Script', cursive;
     overflow: hidden;
-
-
 }
-
 
 .greeting {
     position: absolute;
@@ -90,11 +87,11 @@ body {
     z-index: 9999;
     font-family: 'Dancing Script', cursive;
     top: 20px;
-    font-size: 72px;
+    font-size: 55px;
     opacity: 0;
     height: 150px;
     padding-top: 15px;
-    max-width: 800px;
-    text-align: center;
+    max-width: 900px;
+    text-align: left;
 
 }
